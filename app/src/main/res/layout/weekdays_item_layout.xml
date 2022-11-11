@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="@dimen/_35sdp"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="@dimen/_6sdp"
+    app:cardBackgroundColor="@color/white"
+    android:layout_marginBottom="@dimen/_5sdp"
+    android:layout_marginEnd="@dimen/_3sdp"
+    android:layout_marginStart="@dimen/_2sdp"
+    android:layout_height="@dimen/_50sdp">
+    <TextView
+        android:id="@+id/text_view"
+        android:text="Mon"
+        android:gravity="center"
+        android:textColor="@color/textColor"
+        android:textSize="@dimen/_11sdp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"/>
+
+</com.google.android.material.card.MaterialCardView>
