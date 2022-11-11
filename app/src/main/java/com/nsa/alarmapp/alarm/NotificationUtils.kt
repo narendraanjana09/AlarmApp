@@ -4,6 +4,8 @@ import android.annotation.TargetApi
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
+import android.app.PendingIntent.FLAG_IMMUTABLE
+import android.app.PendingIntent.FLAG_MUTABLE
 import android.content.Context
 import android.content.ContextWrapper
 import android.content.Intent
@@ -55,13 +57,13 @@ class  NotificationUtils(base: Context,val alarmModel: AlarmModel) : ContextWrap
         val intent = Intent(this, MainActivity::class.java).apply {
             flags = Intent.FLAG_ACTIVITY_CLEAR_TASK
         }
-        val pendingIntent = PendingIntent.getActivity(this, 0, intent, PendingIntent.FLAG_MUTABLE)
+        val pendingIntent = PendingIntent.getActivity(this, 0, intent, FLAG_MUTABLE)
 
         val snoozeActionIntent = Intent(this, SnoozeReceiver::class.java)
         snoozeActionIntent.putExtra("id",alarmModel.id)
 
         val snoozePendingIntent: PendingIntent =
-            PendingIntent.getBroadcast(this, alarmModel.id, snoozeActionIntent, 0)
+            PendingIntent.getBroadcast(this, alarmModel.id, snoozeActionIntent, FLAG_MUTABLE)
 
 
 

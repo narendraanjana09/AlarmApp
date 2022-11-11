@@ -85,7 +85,7 @@ object Util {
         val intent = Intent(context, AlarmReceiver::class.java)
         intent.putExtra("requestCode", id)
         val pendingIntent =
-            PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_MUTABLE)
+            PendingIntent.getBroadcast(context, id, intent, PendingIntent.FLAG_IMMUTABLE)
         return Pair(alarmManager, pendingIntent)
     }
 
